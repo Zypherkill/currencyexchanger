@@ -61,7 +61,7 @@ form.addEventListener('submit', async (event) => {
 
 const setupDropdown = (input: HTMLInputElement, dropdown: HTMLElement) => {
 	input.addEventListener('input', () => {
-		const search = input.value.trim().toUpperCase();
+		const search : string = input.value.trim().toUpperCase();
 		dropdown.innerHTML = '';
 
 		if (!search) return (dropdown.style.display = 'none');
@@ -76,7 +76,7 @@ const setupDropdown = (input: HTMLInputElement, dropdown: HTMLElement) => {
 			.slice(0, 20);
 
 		for (const [code, name] of matches) {
-			const li = document.createElement('li');
+			const li = document.createElement('li') as HTMLLIElement;
 			li.textContent = `${code} - ${name}`;
 			li.tabIndex = 0;
 			li.addEventListener('click', () => {
